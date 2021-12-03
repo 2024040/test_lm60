@@ -48,8 +48,8 @@ function getTemp() {
     // lm60OutAvg = Math.idiv(lm60OutAvg, vref)
     ctemp = (lm60OutAvg - 424) / 6.25
     //ctemp = Math.idiv((lm60OutAvg - 424) * 1000, 625)
-    // ctemp = ctemp + toffset
-    ctemp = ctemp *-1
+    ctemp = ctemp - toffset
+    
 
     serial.writeNumber(ctemp)
     serial.writeLine("")
