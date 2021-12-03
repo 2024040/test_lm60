@@ -42,13 +42,13 @@ function getTemp() {
     // for (let index = 0; index < REF_LOOP_CNT; index++) {
     //     vref += pins.analogReadPin(AnalogPin.P1)
     // }
-    lm60OutAvg = Math.idiv(lm60OutAvg, ADC_LOOP_CNT)
+    //lm60OutAvg = Math.idiv(lm60OutAvg, ADC_LOOP_CNT)
     // vref = Math.idiv(vref, REF_LOOP_CNT)
     //lm60OutAvg = 2475 * lm60OutAvg
     // lm60OutAvg = Math.idiv(lm60OutAvg, vref)
-    ctemp = (lm60OutAvg - 424) / 6.25
+    ctemp = (lm60OutAvg - 424) / 625
     //ctemp = Math.idiv((lm60OutAvg - 424) * 1000, 625)
-    ctemp = ctemp - toffset
+    //ctemp = ctemp - toffset
     
 
     serial.writeNumber(ctemp)
